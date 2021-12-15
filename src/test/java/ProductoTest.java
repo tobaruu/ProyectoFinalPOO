@@ -26,6 +26,6 @@ class ProductoTest {
         Producto pr0 = new Producto("ola", 10, 10);
         int id = pr0.getIdProducto();
         System.out.println(pr0.getIdProducto());
-        assertNotEquals(230403.0, id);
+        assertNotEquals(0.0, id);
     }
 }

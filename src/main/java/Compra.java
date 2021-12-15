@@ -4,9 +4,6 @@ import java.util.stream.Collectors;
 
 public class Compra {
 
-    private ArrayList<Producto> listaProducto;
-    private ArrayList<Producto> listaCompra;
-
     public static Producto cancelarProducto(ArrayList<Producto> listaProducto, ArrayList<Producto> listaCompra, JList<Producto> jListCompra) {
         Producto pr0 = jListCompra.getSelectedValue();
         //pr0 = Producto a eliminar de la lista de compra, del cual hay que extraer el stock para volver a sumarlo al correspondiente en la listaProducto
