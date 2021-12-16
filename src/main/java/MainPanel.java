@@ -181,6 +181,8 @@ public class MainPanel extends JFrame implements Printable, Boleta {
 
         //imprimir la boleta / generar PDF
         imprimirButton.addActionListener(e -> {
+            modeloListaCompra.removeAllElements();
+            listaCompra.clear();
             actualizarArchivos();
             try {
                 PrinterJob impresion = PrinterJob.getPrinterJob();
