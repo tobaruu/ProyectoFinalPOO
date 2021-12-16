@@ -440,7 +440,7 @@ public class MainPanel extends JFrame implements Printable, Boleta {
     public String obtenerTiempo(){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
-        return dtf.format(now).toString();
+        return dtf.format(now);
     }
 
     @Override
