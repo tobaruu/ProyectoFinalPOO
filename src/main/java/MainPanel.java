@@ -7,6 +7,8 @@ import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 import java.util.ArrayList;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 public class MainPanel extends JFrame implements Printable, Boleta {
     private JTabbedPane tabbedPane1;
@@ -431,8 +433,14 @@ public class MainPanel extends JFrame implements Printable, Boleta {
         textoBoleta = textoBoleta + "\nMetodo de pago: " + comboBoxPago.getSelectedItem() + "\n";
         textoBoleta = textoBoleta + "Total :                    " + getTotal(listaCompra) + "$\n";
         textoBoleta = textoBoleta + agregarLineaVendedor();
+        textoBoleta = textoBoleta + "\n"+obtenerTiempo() +"\n";
         textoBoleta = textoBoleta + "---------------------------------------------\n";
         return textoBoleta;
+    }
+    public String obtenerTiempo(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        return dtf.format(now).toString();
     }
 
     @Override
